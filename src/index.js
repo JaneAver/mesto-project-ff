@@ -61,9 +61,9 @@ function handleNewCardSubmit(evt) {
 }
 
 function openProfileModal() {
-  openModal(profileModal);
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
+  openModal(profileModal);
 }
 
 const popupList = [profileModal, newCardModal, imgModal];
