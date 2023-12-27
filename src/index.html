@@ -38,25 +38,59 @@
       <footer class="footer page__section">
         <p class="footer__copyright">© 2021 Mesto Russia</p>
       </footer>
+
+      <div class="popup popup_type_avatar">
+        <div class="popup__content_avatar">
+          <button type="button" class="popup__close"></button>
+          <h3 class="popup__title">Обновить аватар</h3>
+          <form class="popup__form" name="new-avatar">
+            <input
+              id="avatar__link"
+              type="url"
+              name="link"
+              class="popup__input popup__input_type_url"
+              placeholder="Ссылка на аватар"
+              required
+            />
+            <span class="popup__input-error avatar__link-error"></span>
+            <button type="submit" class="button popup__button">
+              Сохранить
+            </button>
+          </form>
+        </div>
+      </div>
+
       <div class="popup popup_type_edit">
         <div class="popup__content">
           <button type="button" class="popup__close"></button>
           <h3 class="popup__title">Редактировать профиль</h3>
-          <form class="popup__form" name="edit-profile">
+          <form class="popup__form" name="edit-profile" novalidate>
             <input
+              id="name__input"
               type="text"
               name="name"
               class="popup__input popup__input_type_name"
               placeholder="Имя"
+              minlength="2"
+              maxlength="40"
+              pattern="^[а-яА-ЯёЁa-zA-Z\s\-]+$"
+              data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
               required
             />
+            <span class="popup__input-error name__input-error"></span>
             <input
+              id="description__input"
               type="text"
               name="description"
               class="popup__input popup__input_type_description"
               placeholder="Занятие"
+              minlength="2"
+              maxlength="200"
+              pattern="^[а-яА-ЯёЁa-zA-Z\s\-]+$"
+              data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
               required
             />
+            <span class="popup__input-error description__input-error"></span>
             <button type="submit" class="button popup__button">
               Сохранить
             </button>
@@ -69,19 +103,27 @@
           <h3 class="popup__title">Новое место</h3>
           <form class="popup__form" name="new-place">
             <input
+              id="place__input"
               type="text"
               name="place-name"
               class="popup__input popup__input_type_card-name"
               placeholder="Название"
+              minlength="2"
+              maxlength="30"
+              pattern="^[а-яА-ЯёЁa-zA-Z\s\-]+$"
+              data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
               required
             />
+            <span class="popup__input-error place__input-error"></span>
             <input
+              id="link__input"
               type="url"
               name="link"
               class="popup__input popup__input_type_url"
               placeholder="Ссылка на картинку"
               required
             />
+            <span class="popup__input-error link__input-error"></span>
             <button type="submit" class="button popup__button">
               Сохранить
             </button>
@@ -102,7 +144,10 @@
         <button type="button" class="card__delete-button"></button>
         <div class="card__description">
           <h2 class="card__title"></h2>
-          <button type="button" class="card__like-button"></button>
+          <div class="card__like">
+            <button type="button" class="card__like-button"></button>
+            <div class="card__like-counter"></div>
+          </div>
         </div>
       </li>
     </template>

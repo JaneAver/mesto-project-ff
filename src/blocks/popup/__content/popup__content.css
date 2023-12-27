@@ -9,8 +9,26 @@
   padding: 34px 36px;
 }
 
+.popup__content_avatar {
+  max-width: 430px;
+  width: 100%;
+  min-height: 272px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 34px 36px;
+}
+
 @media screen and (max-width: 568px) {
   .popup__content {
+    width: 100%;
+    max-width: calc(100% - 80px);
+    margin-top: 40px;
+    padding: 30px 20px;
+  }
+
+  .popup__content_avatar {
     width: 100%;
     max-width: calc(100% - 80px);
     margin-top: 40px;

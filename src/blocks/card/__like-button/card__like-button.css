@@ -17,3 +17,12 @@
 .card__like-button:hover {
   opacity: 0.6;
 }
+
+.card__like-counter {
+  justify-self: center;
+}
+
+.card__like {
+  display: grid;
+  gap: 3px;
+}
