@@ -17,6 +17,13 @@
 .popup__button:hover {
   background: rgba(0, 0, 0, 0.8);
   cursor: pointer;
+  color: #fff;
+}
+
+.popup__button_disabled {
+  background-color: transparent;
+  color: #c4c4c4;
+  border: 1px solid #c4c4c4;
 }
 
 @media screen and (max-width: 568px) {

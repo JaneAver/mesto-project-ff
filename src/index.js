@@ -31,13 +31,13 @@ const profileName = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__description");
 let profileId = null;
 Promise.all([api.getProfileDetails(), api.getCards()])
-  .then(([ProfileDetails, Cards]) => {
-    profileId = ProfileDetails._id;
-    profileImage.style.backgroundImage = `url(\\${ProfileDetails.avatar})`;
-    profileName.textContent = ProfileDetails.name;
-    profileJob.textContent = ProfileDetails.about;
+  .then(([profileDetails, cards]) => {
+    profileId = profileDetails._id;
+    profileImage.style.backgroundImage = `url(\\${profileDetails.avatar})`;
+    profileName.textContent = profileDetails.name;
+    profileJob.textContent = profileDetails.about;
 
-    Cards.forEach((card) => {
+    cards.forEach((card) => {
       imgCard.append(
         createCard(
           card,
